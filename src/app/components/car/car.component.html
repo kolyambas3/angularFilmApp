@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="contRight">
+        <h1>По телевиденью</h1>
+        <div class="card-body" *ngFor="let tv of TVS| slice:0 : 2">
+            <img src="{{imageRequest + tv.poster_path}}" alt="">
+            <div class="card-desc">
+                <h4><a [routerLink]="['/inCinema', tv.id]">{{tv.name}}</a></h4>
+                <h5 class="card-title">Рейтинг: {{tv.vote_average}}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="contLeft">
+        <h1>В кино</h1>
+        <div class="card-body" *ngFor="let film of films| slice:0 : 2">
+            <img src="{{imageRequest + film.poster_path}}" alt="">
+            <div class="card-desc">
+                <h4><a [routerLink]="['/popular', film.id]">{{film.title}}</a></h4>
+                <h5 class="card-title">Рейтинг: {{film.vote_average}}</h5>
+            </div>
+        </div>
+    </div>
+</div>

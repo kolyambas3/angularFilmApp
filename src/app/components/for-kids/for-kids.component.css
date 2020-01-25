@@ -1,0 +1,38 @@
+button{
+    border: none;
+}
+
+.container {
+    margin-top: 3%;
+}
+
+.card-body{
+    overflow: hidden;
+    padding: 0;
+}
+
+.card{
+    margin: 10px;
+    width: 250px;
+    display: flex;
+    display: inline-flex;
+    height: 470px;
+    overflow: hidden;
+}
+
+.card img{
+    width: 250px;
+}
+
+.rate{
+    color: grey;
+}
+
+.card-title{
+    color: green
+}
+
+.pagination{
+    max-width: 110px;
+    margin: 0 auto;
+}

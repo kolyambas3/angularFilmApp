@@ -1,0 +1,48 @@
+button{
+    border: none;
+}
+
+.container {
+    margin-top: 4%;
+}
+
+.card{
+    margin: 10px;
+    width: 530px;
+    display: flex;
+    display: inline-flex;
+    height: 420px;
+}
+
+.card img{
+    width: 200px;
+    float: left;
+    padding: 8px;
+}
+
+.card-text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 20px;
+    display: -webkit-box;
+	-webkit-line-clamp: 10;
+	-webkit-box-orient: vertical;
+}
+
+.card-title {
+    color: green
+}
+
+.rate{
+    color: grey;
+}
+
+.pagination{
+    max-width: 110px;
+    margin: 0 auto;
+}
+
+app-search-tv form{
+    widows: 100%;
+}
+

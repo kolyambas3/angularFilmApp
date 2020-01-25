@@ -1,0 +1,13 @@
+<form class="form-inline" (keyup)="search()">
+    <input class="form-control" type="text" placeholder="Поиск" name="request" [(ngModel)]="searchRequest">
+</form>
+
+<div class="results" *ngIf="response;">
+    <ul style="list-style-type: none;">
+        <li *ngFor="let result of response" class="resultItem">
+            <img src="{{imageRequest + result.poster_path}}" alt="">
+            <a [routerLink]="['/popular', result.id]">{{result.title}}</a>
+            <hr>
+        </li>
+    </ul>
+</div>

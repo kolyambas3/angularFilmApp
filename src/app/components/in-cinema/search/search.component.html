@@ -1,0 +1,13 @@
+<form class="form-inline mt-2 mt-md-0" (keyup)="search()">
+    <input class="form-control mr-sm-2" type="text" placeholder="Поиск" name="request" [(ngModel)]="searchRequest">
+</form>
+
+<div class="results" *ngIf="response;">
+    <ul style="list-style-type: none;">
+        <li *ngFor="let result of response" class="resultItem">
+            <img src="{{imageRequest + result.poster_path}}" alt="">
+            <a [routerLink]="['/inCinema', result.id]">{{result.name}}</a>
+            <hr>
+        </li>
+    </ul>
+</div>

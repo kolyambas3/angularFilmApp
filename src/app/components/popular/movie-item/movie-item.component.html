@@ -1,0 +1,54 @@
+<div class="сontainer main">
+    <div class="header">
+        <div class="headerItem">
+            <div class="headerItems">
+                <div class="headerItemImg">
+                    <img src="{{imageRequest + response.poster_path}}" alt="">
+                </div>
+                <div class="headerItemDesc">
+                    <h1>{{response.title}}</h1>
+                    <p>{{response.overview}}</p>
+                    <h5>Киностудии</h5>
+                    <a href="/movie-item" *ngFor="let prodComp of prodCompanies">{{prodComp.name}}, </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container trailer_container">
+    <h2>Трейлер</h2>
+    <br>
+    <div class="container trailer_item" *ngFor="let trailer of trailers | slice: 0: 2">
+        <youtube-player
+          [videoId]="trailer.key"
+          (ready)="savePlayer($event)"
+          (change)="onStateChange($event)"
+          [playerVars]="playerVars">
+        </youtube-player>
+        <h3>{{trailer.name}}</h3>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <h2>Рекомендации</h2>
+    <div class="row">
+
+        <div class="col-md-4" *ngFor="let recomend of recomendations | slice: 0 : 6">
+
+            <nav class="nav flex-column amber lighten-3 py-4 mb-r font-weight-bold z-depth-1">
+                <h4 class="col-md-12"><a (click)="search(recomend.id)">{{recomend.title}}</a></h4>
+                <h5 class="col-md-12">{{recomend.release_date}}</h5>
+                <img src="{{imageRequest + recomend.backdrop_path}}" alt="" class="col-md-12">
+                <p class="col-md-12">{{recomend.overview}}</p>
+            </nav>
+
+        </div>
+
+    </div>
+</div>
+<!-- Grid row -->

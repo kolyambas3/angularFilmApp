@@ -1,0 +1,30 @@
+<div class="container">
+    <app-search-movie></app-search-movie>
+    <h2>Фильмы</h2>
+    <div class="card" *ngFor="let film of response">
+        <div class="card-header">
+            <h4>
+                <button (click)="addToFav(film.id)"><i class="far fa-bookmark"></i></button>
+                {{film.title}}</h4>
+        </div>
+        <div class="card-body">
+            <img src="{{imageRequest + film.poster_path}}" alt="">
+            <h5 class="card-title">Рейтинг: {{film.vote_average}}</h5>
+            <p class="rate">Дата выхода: {{film.release_date}}</p>
+            <p class="card-text">{{film.overview}}</p>
+        </div>
+        <div class="card-header"><a [routerLink]="['/popular', film.id]">Подробнее</a></div>
+    </div>
+</div>
+
+<div class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><button class="btn btn-success" (click)="prvPage()"> < </button></li>
+            <input type="text" class="form-control" [(ngModel)]="page" (enter)="gageSearch()">
+            <li class="page-item"><button class="btn btn-success" (click)="nxtPage()"> > </button></li>
+        </ul>
+    </nav>
+</div>
+
+

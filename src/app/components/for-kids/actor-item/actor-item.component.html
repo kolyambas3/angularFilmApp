@@ -1,0 +1,23 @@
+<div class="сontainer main">
+    <div class="header">
+        <div class="headerItem">
+            <div class="headerItems">
+                <div class="headerItemImg">
+                    <img src="{{imageRequest + response.profile_path}}" alt="">
+                    <h5>Год рождения:{{response.birthday}}</h5>
+                    <h4>Место рождения</h4>
+                    <p>{{response.place_of_birth}}</p>
+                    <h4>Также известен как:</h4>
+                    <ul>
+                        <li *ngFor="let name of otherName">{{name}}</li>
+                    </ul>
+                </div>
+                <div class="headerItemDesc">
+                    <h1>{{response.name}}</h1>
+                    <h5>Биаография:</h5>
+                    <p>{{response.biography}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

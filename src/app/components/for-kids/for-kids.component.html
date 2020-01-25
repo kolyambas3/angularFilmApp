@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Знаменитости</h2>
+    <div class="card" *ngFor="let actor of response">
+        <h4 class="card-header">{{actor.name}}</h4>
+        <div class="card-body">
+            <img src="{{imageRequest + actor.profile_path}}" alt="">
+        </div>
+        <h5 class="card-title card-header">Рейтинг: {{actor.popularity}}</h5>
+        <div class="card-header"><a [routerLink]="['/forKids', actor.id]">Подробнее</a></div>
+    </div>
+</div>
+
+<div class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><button class="btn btn-success" (click)="prvPage()"> < </button></li>
+            <input type="text" class="form-control" [(ngModel)]="page">
+            <li class="page-item"><button class="btn btn-success" (click)="nxtPage()"> > </button></li>
+        </ul>
+    </nav>
+</div>
